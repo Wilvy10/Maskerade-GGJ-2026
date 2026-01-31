@@ -16,5 +16,8 @@ public class PlayerInteract : MonoBehaviour
         interactText.enabled = false;
     }
 
-    
+    void OnInteract()
+    {
+        Debug.Log("interact with NPC");
+    }
 }
