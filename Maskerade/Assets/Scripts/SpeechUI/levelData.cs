@@ -16,7 +16,7 @@ public class levelData : MonoBehaviour
     [SerializeField] int answerRounder1;
 [SerializeField] Sprite floaterRound1;
     [Space]
-	[Header("Round1")]
+	[Header("Round2")]
 	[SerializeField] Sprite option1Round2;
 	[SerializeField] Sprite option2Round2;
 	[SerializeField] Sprite option3Round2;
@@ -25,7 +25,7 @@ public class levelData : MonoBehaviour
 	[SerializeField] int answerRound2;
 	[SerializeField] Sprite floaterRound2;
 	[Space]
-	[Header("Round1")]
+	[Header("Round3")]
 	[SerializeField] Sprite option1Round3;
 	[SerializeField] Sprite option2Round3;
 	[SerializeField] Sprite option3Round3;
@@ -44,17 +44,19 @@ public class levelData : MonoBehaviour
 			{
 				GameObject floaterObj1 = Instantiate(floater);
 				floaterObj1.GetComponent<waveMotion>().setSprite(floaterRound1);
+				count++;
 			}
 			else if (count == 1)
 			{
 				GameObject floaterObj2 = Instantiate(floater);
 				floaterObj2.GetComponent<waveMotion>().setSprite(floaterRound2);
+				count++;
 			}
 			else if (count == 2)
 			{
 				GameObject floaterObj3 = Instantiate(floater);
 				floaterObj3.GetComponent<waveMotion>().setSprite(floaterRound3);
-
+				count++;
 			}
 		}
 		else

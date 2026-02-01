@@ -8,6 +8,7 @@ public class DraggableSymbol : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private Vector3 location;
     private Vector2 offset;
     [SerializeField] int myNum;
+    [SerializeField] GameObject puzzle;
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin drag");
@@ -22,7 +23,11 @@ public class DraggableSymbol : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         if (collider != null)
         {
-            //call Puzzle (mynumber)
+            puzzle.GetComponent<Puzzle>().checkAnswer(myNum);
+        }
+        else
+        {
+
         }
         transform.position = location;
         Debug.Log("End drag");

@@ -26,7 +26,7 @@ List<Sprite> floaterSprites = new List<Sprite>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartRound();
     }
 
     // Update is called once per frame
@@ -76,8 +76,9 @@ floaterSprites.Add(floater5Sprite);
 
     public void StartRound()
     {
-clock.GetComponent<timerTracker>().startTimer();
-        Instantiate(floaterPrefab);
+        clock.GetComponent<timerTracker>().resetCurrentTime();
+		clock.GetComponent<timerTracker>().startTimer();
+        
         Debug.Log("instantiated");
 	}
     public void checkAnswer(int answer_)
@@ -86,6 +87,7 @@ clock.GetComponent<timerTracker>().startTimer();
             suspicion.GetComponent<suspicionTracker>().ChangeSuspicionByAmount(10);
 
 		}
+        StartRound();
 		//start next round if available
 	}
 }
