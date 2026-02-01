@@ -4,6 +4,7 @@ public class waveMotion : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float xSpeed;
+    [SerializeField] private float yAmplitude;
     [SerializeField] private float ySpeed; 
     [SerializeField] private float timer = 0.0f;
     private float baseY ;
@@ -21,7 +22,7 @@ public class waveMotion : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
         float newX = transform.position.x + (xSpeed * Time.deltaTime);
-        float newY = baseY + (Mathf.Sin(timer*4) * ySpeed * Time.deltaTime);
+        float newY = baseY + (Mathf.Sin(timer*ySpeed) * yAmplitude * Time.deltaTime);
         transform.position = new Vector3(newX, newY,0);
 
         timer += Time.deltaTime;

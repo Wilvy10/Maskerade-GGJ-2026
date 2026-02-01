@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class DraggableSymbol : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private Vector3 location;
     private Vector2 offset;
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -17,12 +18,13 @@ public class DraggableSymbol : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        transform.position = location;
         Debug.Log("End drag");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        location=transform.position;
     }
 
     // Update is called once per frame
