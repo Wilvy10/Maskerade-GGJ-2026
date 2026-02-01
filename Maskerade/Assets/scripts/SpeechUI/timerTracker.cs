@@ -7,15 +7,16 @@ public class timerTracker : MonoBehaviour
 	[SerializeField] private Image bar;
 	[SerializeField] private float currentTime = 0.0f;
 	[SerializeField] private float maxTime = 10.0f;
-	private bool clockOn = true;
+	private bool clockOn = false;
 
 	public void resetCurrentTime()
 	{
 		currentTime = 0.0f;
 	}
 
-	private void startTimer()
+	public void startTimer()
 	{
+		resetCurrentTime();
 		clockOn = true;
 	}
 

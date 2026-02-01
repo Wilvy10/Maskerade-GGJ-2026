@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 959650535691590451}
   - component: {fileID: 8313862428701400916}
   - component: {fileID: 110605664817565893}
+  - component: {fileID: 623621511115936176}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -138,3 +139,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.48, y: 0.48}
   m_EdgeRadius: 0
+--- !u!114 &623621511115936176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7484852542717505307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e84dbdd9f44b64d897c8447de5b933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  puzzle: {fileID: 0}
+  answer: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  Option4: {fileID: 0}
+  floater1: {fileID: 0}
+  floater2: {fileID: 0}
+  floater3: {fileID: 0}

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class waveMotion : MonoBehaviour
 {
     [SerializeField] private Transform target;
@@ -31,4 +31,9 @@ public class waveMotion : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void setSprite(Sprite new_sprite)
+    {
+        GetComponent<Image>().sprite = new_sprite;
+
+	}
 }

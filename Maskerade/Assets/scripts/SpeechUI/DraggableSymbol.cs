@@ -4,8 +4,10 @@ using UnityEngine.EventSystems;
 
 public class DraggableSymbol : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private Collision2D collider;
     private Vector3 location;
     private Vector2 offset;
+    [SerializeField] int myNum;
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin drag");
@@ -18,11 +20,30 @@ public class DraggableSymbol : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (collider != null)
+        {
+            //call Puzzle (mynumber)
+        }
         transform.position = location;
         Debug.Log("End drag");
+	}
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "mouth")
+        {
+            collider = collision;
+        }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+	void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.name == "mouth")
+		{
+			collider = null;
+		}
+	}
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
     {
         location=transform.position;
     }

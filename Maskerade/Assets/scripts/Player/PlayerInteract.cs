@@ -4,11 +4,12 @@ using TMPro;
 public class PlayerInteract : MonoBehaviour
 {
     public TMP_Text interactText;
-
+    private GameObject NPC;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         interactText.enabled = true;
         interactText.transform.position = collision.gameObject.transform.position;
+        NPC = collision.gameObject;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -18,6 +19,7 @@ public class PlayerInteract : MonoBehaviour
 
     void OnInteract()
     {
-        Debug.Log("interact with NPC");
+        NPC.GetComponent<NPCPuzzle>().Interacted();
+		Debug.Log("interact with NPC");
     }
 }
