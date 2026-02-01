@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = moveInput * moveSpeed;
-        rb.velocity.Normalize();
+        rb.linearVelocity = moveInput * moveSpeed;
+        rb.linearVelocity.Normalize();
     }
 
     void OnMove(InputValue value)
